@@ -1,10 +1,25 @@
+<header>
+  <h2>Movie Creation</h2>
+</header>
 <form action="/movie-creation" method="POST" enctype="multipart/form-data" id="movie-creation">
-  <input type="text" name="name" placeholder="name" value="test">
-  <input type="text" name="year" placeholder="year" value="1999">
-  <input type="text" name="linkIMDB" placeholder="linkIMDB" value="https://www.imdb.com/title/tt0091605/?ref_=fn_al_tt_2">
-  <input type="file" name="photo">
-  <input type="text" name="city" placeholder="city" value="new york">
-  <input type="text" name="country" placeholder="country" value="US">
+  <div class="form-elements-wrapper">
+    <div class="form-elements">
+      <input type="text" name="name" placeholder="name" value="test">
+      <input type="text" name="year" placeholder="year" value="1999">
+      <input type="text" name="linkIMDB" placeholder="linkIMDB"
+        value="https://www.imdb.com/title/tt0091605/?ref_=fn_al_tt_2">
+      <input type="file" name="photo">
+      <input type="text" name="city" placeholder="city" value="new york">
+      <input type="text" name="country" placeholder="country" value="US">
+      <button id="save-movie">Save new movie</button>
 
-  <button id="save-movie">Save new movie</button>
+    </div>
+
+    <div class="map-wrapper">
+      <input type="text" id="search-box">
+      <div id="map"></div>
+    </div>
+  </div>
 </form>
+
+<script type="text/javascript" src="/javascripts/main-interactive.js"></script>

@@ -1,7 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-html, body {
+
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -20,7 +26,7 @@ a:hover {
 }
 
 h2 {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   text-transform: capitalize;
 }
 
@@ -33,6 +39,14 @@ nav a::after {
   content: "|";
 }
 
+input {
+  padding: 1.2rem;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
 section.contents {
   font-size: 1.2rem;
   padding-top: 2rem;
@@ -41,7 +55,34 @@ section.contents {
 #movie-creation {
   display: flex;
   flex-direction: column;
-  max-width: 50vw;
+}
+
+#movie-creation .form-elements-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#movie-creation #save-movie {
+  width: 20rem;
+}
+
+#movie-creation .form-elements {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-right: 2rem;
+  max-width: 50rem;
+}
+
+#movie-creation #search-box {
+  width: 100%;
+}
+
+#map {
+  height: 50rem;
+  width: 50rem;
+
 }
 
 // input {
@@ -49,7 +90,7 @@ section.contents {
 //   padding: 2rem;
 // }
 
-#movie-creation input{
+#movie-creation input {
   margin-bottom: 2rem;
 }
 
@@ -62,4 +103,3 @@ section.contents {
   justify-content: space-between;
   margin: 2rem 0;
 }
-
