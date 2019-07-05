@@ -5,4 +5,14 @@ body {
 
 a {
   color: #00B7FF;
+  transition: all 0.5s;
+}
+
+a:hover {
+  color: red;
+}
+
+nav a::after {
+  margin-left: 10px;
+  content: "|";
 }
