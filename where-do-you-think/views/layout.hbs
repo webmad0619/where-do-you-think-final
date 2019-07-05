@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
-
-  
-
   <nav>
     {{#if user}}
     <a href="/play">Play</a>
@@ -30,16 +28,14 @@
     <a href="/auth/logout">Logout</a>
     {{/if}}
 
-
     {{#if user}}
-    User: {{user.username}} | {{user.role}}
+    <span>User: {{user.username}} | {{user.role}}</span>
     {{/if}}
   </nav>
 
-
-  
-
-  {{{body}}}
+  <section class="contents">
+    {{{body}}}
+  </section>
 
   <script src="/javascripts/script.js"></script>
 </body>

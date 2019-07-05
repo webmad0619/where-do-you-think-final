@@ -1,0 +1,7 @@
+<h2>movies list ({{allMovies.length}})</h2>
+
+<ul id="movies-list">
+  {{#each allMovies}}
+  <li><a href="{{this.linkIMDB}}">{{this.name}} {{this.year}}</a> <a href="#" onclick="edit({{this._id}})">edit</a></li>
+  {{/each}}
+</ul>
