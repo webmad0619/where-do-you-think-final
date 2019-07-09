@@ -7,11 +7,11 @@
   <input id="username" type="text" name="username" placeholder="Username">
   <input id="password" type="password" name="password" placeholder="Password">
 
-  {{#if message }}
-    <div class="error-message">{{ message }}</div>
-  {{/if}}
-
   <button>Login</button>
+
+  {{#if message }}
+  {{> error}}
+  {{/if}}
 
   <p class="account-message">
     Don't have an account yet?

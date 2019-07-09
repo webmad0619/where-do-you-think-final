@@ -5,13 +5,14 @@
 <form action="/update-profile" method="POST">
   <span>{{username}}</span>
 
-  <input type="text" name="password-old" placeholder="old password">
-  <input type="text" name="password-new" placeholder="new password">
+  <input type="password" name="password-old" placeholder="old password">
+  <input type="password" name="password-new" placeholder="new password">
+  <input type="password" name="password-repeat-new" placeholder="repeat new password">
 
   <span>Created at: {{created_at}}</span>
 
   {{#if errorMessage}}
-  <span class="error-message"><i class="fas fa-exclamation-triangle"></i> {{errorMessage}}</span>
+    {{> error}}
   {{/if}}
 
   {{#if okMessage}}

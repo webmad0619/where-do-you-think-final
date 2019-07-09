@@ -73,6 +73,7 @@ select {
   font-weight: normal; }
 
 .error-message {
+  margin-top: 2rem;
   font-weight: bold;
   color: red; }
 

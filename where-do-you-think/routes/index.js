@@ -83,6 +83,13 @@ router.post('/update-profile', (req, res, next) => {
         return;
       }
 
+      if (req.body["password-new"] !== req.body["password-repeat-new"]) {
+        foundUser.errorMessage = 'New password doesnt match'
+        
+        res.render("profile", foundUser);
+        return;
+      }
+
       const bcryptSalt = 10;
       const salt = bcrypt.genSaltSync(bcryptSalt);
       const hashPass = bcrypt.hashSync(req.body["password-new"], salt);
