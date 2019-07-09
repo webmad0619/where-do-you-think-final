@@ -4,6 +4,8 @@
 
 <ul id="movies-list">
   {{#each allMovies}}
-  <li><a href="{{this.linkIMDB}}">{{this.name}} {{this.year}}</a> <a href="#" onclick="edit({{this._id}})">edit</a></li>
+  <li><a href="/movie-edit/{{this._id}}">{{this.name}} {{this.year}}</a> <a href="{{this.linkIMDB}}">IMDB</a></li>
   {{/each}}
 </ul>
+
+<script type="text/javascript" src="/javascripts/movies-list.js"></script>

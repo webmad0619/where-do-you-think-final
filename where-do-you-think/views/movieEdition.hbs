@@ -1,0 +1,27 @@
+<header>
+  <h2>Movie Edition</h2>
+</header>
+<form action="/movie-edit" method="POST" enctype="multipart/form-data" id="movie-creation">
+  <div class="form-elements-wrapper">
+    <div class="form-elements">
+      <input type="hidden" name="_id" value="{{_id}}">
+      <input type="text" name="name" placeholder="name" value="{{name}}">
+      <input type="text" name="year" placeholder="year" value="{{year}}">
+      <input type="text" name="linkIMDB" placeholder="linkIMDB" value="{{linkIMDB}}">
+      <input type="file" name="photo">
+      <input type="text" name="city" placeholder="city" value="{{city}}">
+      <input type="text" name="country" placeholder="country" value="{{country}}">
+      <nav>
+        <button id="save-movie">Update movie</button>
+        <a href="/movies-list">See all movies</a>
+      </nav>
+    </div>
+
+    <div class="map-wrapper">
+      <input type="text" id="search-box">
+      <div id="map"></div>
+    </div>
+  </div>
+</form>
+
+<script type="text/javascript" src="/javascripts/main-interactive.js"></script>

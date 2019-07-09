@@ -42,4 +42,21 @@ router.get('/movies-list', (req, res, next) => {
     })
 });
 
+router.get('/movie-edit/:id', (req, res, next) => {
+  Movie
+    .findById(req.params.id)
+    .then(movieToBeEdited => {
+      res.render('movieEdition', movieToBeEdited);
+    })
+});
+
+router.post('/movie-edit', upload.single('photo'), (req, res, next) => {
+  console.log(req.body)
+  Movie
+    .findByIdAndUpdate(req.body._id, req.body, {new: true})
+    .then(editedMovie => {
+      res.render('movieEdition', editedMovie);
+    })
+});
+
 module.exports = router;
