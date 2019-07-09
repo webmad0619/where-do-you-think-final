@@ -57,9 +57,38 @@ nav.top {
   nav.top i {
     margin-right: 1rem; }
 
+label {
+  margin-bottom: 2rem; }
+
+button,
+input[type=submit],
+select,
+option {
+  padding: 1rem;
+  background: none;
+  border-radius: 0.5rem;
+  font-weight: bold; }
+
+select {
+  font-weight: normal; }
+
+.error-message {
+  font-weight: bold;
+  color: red; }
+
+.ok-message {
+  font-weight: bold;
+  color: green; }
+
 section.contents {
   font-size: 1.2rem;
   padding-top: 2rem; }
+
+.account-message {
+  margin-top: 2rem; }
+
+.signup-form select {
+  margin: 0 0 2rem 0; }
 
 #movie-creation {
   max-width: initial; }

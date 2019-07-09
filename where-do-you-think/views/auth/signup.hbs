@@ -1,24 +1,19 @@
-<h2>Signup</h2>
+<header>
+  <h2>Signup</h2>
+</header>
 
-<form action="/auth/signup" method="POST" id="form-container">
-  <label for="username">Username</label>
-  <input id="username" type="text" name="username" placeholder="JonSnow">
+<form action="/auth/signup" method="POST" id="form-container" class="signup-form">
+  <input id="username" type="text" name="username" placeholder="Username">
 
-  <br><br>
-
-  <label for="password">Password</label>
-  <input id="password" type="password" name="password" placeholder="Your password">
-  <br>
+  <input id="password" type="password" name="password" placeholder="Password">
   {{#if message }}
     <div class="error-message">{{ message }}</div>
   {{/if}}
 
-  <select name="role" id="">
+  <select name="role">
     <option value="player">Player</option>
     <option value="admin">Admin</option>
   </select>
-
-  <br><br>
 
   <button>Create account</button>
 
