@@ -23,58 +23,70 @@ h2 {
   font-size: 2.5rem;
   text-transform: capitalize; }
 
-nav.top {
-  font-size: 1.6rem; }
-
-nav.top a::after {
-  margin-left: 1rem;
-  content: "|"; }
-
 input {
   padding: 1.2rem; }
 
 header {
   margin-bottom: 2rem; }
 
+form {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-right: 2rem;
+  max-width: 50rem;
+  width: 100%; }
+  form input,
+  form span {
+    margin-bottom: 2rem; }
+  form input:last-child {
+    margin-bottom: 0; }
+
+nav.top {
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: space-between; }
+  nav.top a::after {
+    margin-left: 1rem;
+    content: "|"; }
+  nav.top a:last-child::after {
+    margin-left: 1rem;
+    content: ""; }
+  nav.top .user-info {
+    margin-right: 2rem; }
+  nav.top i {
+    margin-right: 1rem; }
+
 section.contents {
   font-size: 1.2rem;
   padding-top: 2rem; }
 
 #movie-creation {
-  display: flex;
-  flex-direction: column; }
-
-#movie-creation .form-elements-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; }
-
-#movie-creation #save-movie {
-  width: 20rem; }
-
-#movie-creation .form-elements {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  margin-right: 2rem;
-  max-width: 50rem; }
-
-#movie-creation #search-box {
-  width: 100%; }
+  max-width: initial; }
+  #movie-creation .form-elements-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%; }
+  #movie-creation .form-elements {
+    min-width: 50rem;
+    display: flex;
+    flex-direction: column;
+    margin-right: 2rem; }
+  #movie-creation #save-movie {
+    width: 20rem; }
+  #movie-creation #search-box {
+    width: 100%; }
 
 #map {
   height: 50rem;
   width: 50rem; }
 
-#movie-creation input {
-  margin-bottom: 2rem; }
-
 #movies-list {
   max-width: 50vw; }
-
-#movies-list li {
-  display: flex;
-  justify-content: space-between;
-  margin: 2rem 0; }
+  #movies-list li {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0; }
 
 /*# sourceMappingURL=style.css.map */

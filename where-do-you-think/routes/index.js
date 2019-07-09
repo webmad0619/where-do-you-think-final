@@ -3,6 +3,7 @@ const router = express.Router();
 const multer = require("multer");
 const upload = multer({ dest: './public/uploads/' });
 const Movie = require("../models/Movie")
+const User = require("../models/User")
 
 /* GET home page */
 router.get('/', (req, res, next) => {
@@ -10,7 +11,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/movie-creation', (req, res, next) => {
-  res.render('movieCreation');
+  res.render('movie-creation');
 });
 
 router.post('/movie-creation', upload.single('photo'), (req, res, next) => {
@@ -46,7 +47,7 @@ router.get('/movie-edit/:id', (req, res, next) => {
   Movie
     .findById(req.params.id)
     .then(movieToBeEdited => {
-      res.render('movieEdition', movieToBeEdited);
+      res.render('movie-edition', movieToBeEdited);
     })
 });
 
@@ -55,7 +56,16 @@ router.post('/movie-edit', upload.single('photo'), (req, res, next) => {
   Movie
     .findByIdAndUpdate(req.body._id, req.body, {new: true})
     .then(editedMovie => {
-      res.render('movieEdition', editedMovie);
+      res.render('movie-edition', editedMovie);
+    })
+});
+
+router.get('/profile', (req, res, next) => {
+  console.log(req.user)
+  User
+    .findById(req.user._id)
+    .then(user => {
+      res.render('profile', user);
     })
 });
 

@@ -10,39 +10,44 @@
   <script src="https://maps.googleapis.com/maps/api/js?key={{GOOGLEMAPSAPIKEY}}&libraries=places"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+  <link rel="stylesheet" href="/fontawesome-free-5.9.0-web/css/all.css" />
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 
 <body>
   <nav class="top">
-    {{#if user}}
-    <a href="/play">Play</a>
-    <a href="/map">Map</a>
-    <a href="/profile">Profile</a>
-    <a href="/leader-board">Leader Board</a>
-    {{#if isAdmin}}
-    <a href="/movie-creation">Movie Creation</a>
-    <a href="/movies-list">Movies List</a>
-    {{/if}}
-    {{/if}}
-    {{#unless user}}
-    <a href="/auth/login">Login</a>
-    <a href="/auth/signup">Signup</a>
-    {{/unless}}
-    {{#if user}}
-    <a href="/auth/logout">Logout</a>
-    {{/if}}
+    <div class="options">
+      {{#if user}}
+      <a href="/play">Play</a>
+      <a href="/map">Map</a>
+      <a href="/leader-board">Leader Board</a>
+      {{#if isAdmin}}
+      <a href="/movie-creation">Movie Creation</a>
+      <a href="/movies-list">Movies List</a>
+      {{/if}}
+      {{/if}}
+      {{#unless user}}
+      <a href="/auth/login">Login</a>
+      <a href="/auth/signup">Signup</a>
+      {{/unless}}
+    </div>
 
-    {{#if user}}
-    <span>User: {{user.username}} | {{user.role}}</span>
-    {{/if}}
+    <div class="user">
+      {{#if user}}
+      <span class="user-info"><i class="fas fa-user-tie"></i><a href="/profile">{{user.username}}</a>({{user.role}})</span>
+      {{/if}}
+
+      {{#if user}}
+      <a href="/auth/logout">Logout</a>
+      {{/if}}
+    </div>
   </nav>
 
   <section class="contents">
     {{{body}}}
   </section>
 
-  
+
   <script src="/javascripts/script.js"></script>
 </body>
 
